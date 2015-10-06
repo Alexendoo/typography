@@ -1,2 +1,2 @@
 # typography
-Display various typefaces for easy selection
+Displays a bunch of fonts for easy pickings
