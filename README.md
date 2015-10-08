@@ -1,2 +1,2 @@
 # typography
-Displays a bunch of fonts for easy pickings
+A curated list of free fonts to choose from
