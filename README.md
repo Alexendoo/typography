@@ -1,2 +1,2 @@
-# typography
+# Typography
 A curated list of free fonts to choose from
