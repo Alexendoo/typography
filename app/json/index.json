@@ -1,5 +1,11 @@
 {
-	"title": "hello",
-	"message": "hi",
-	"test": "test"
+    "title": "hello",
+    "message": "hi",
+    "test": "test",
+    "fonts": [
+        {
+            "name": "Roboto",
+            "weights": [100, 200, 300]
+        }
+    ]
 }
