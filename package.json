@@ -1,20 +1,20 @@
 {
-  "name": "typography",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexendoo/typography.git"
-  },
-  "author": "Alexendoo",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alexendoo/typography/issues"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.9.8",
-    "gulp": "^3.9.0",
-    "gulp-data": "^1.2.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-sass": "^2.0.4",
-    "path": "^0.12.7"
-  }
+    "name": "typography",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alexendoo/typography.git"
+    },
+    "author": "Alexendoo",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/alexendoo/typography/issues"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.9.8",
+        "gulp": "^3.9.0",
+        "gulp-data": "^1.2.0",
+        "gulp-jade": "^1.1.0",
+        "gulp-sass": "^2.0.4",
+        "path": "^0.12.7"
+    }
 }
