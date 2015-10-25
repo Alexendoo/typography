@@ -1,14 +1,13 @@
 var gulp        = require('gulp');
 var sass        = require('gulp-sass');
 var data        = require('gulp-data');
-var jade        = require('gulp-jade');
+var swig        = require('gulp-swig');
 var path        = require('path');
 var browserSync = require('browser-sync');
 
 var src = {
     scss: './app/scss/*.scss',
     html: './app/html/',
-    jade: './app/jade/',
     json: './app/json/'
 };
 
@@ -18,15 +17,15 @@ gulp.task('serve', function() {
     });
 
     gulp.watch(src.scss, ['sass']);
-    gulp.watch([src.jade + '**/*.jade', src.json + '*.json'], ['templates']);
+    gulp.watch([src.html + '**/*.html', src.json + '*.json'], ['templates']);
 });
 
 gulp.task('templates', function() {
-    return gulp.src(src.jade + '*.jade')
+    return gulp.src(src.html + '*.html')
         .pipe(data(function(file) {
-            return require(src.json + path.basename(file.path, '.jade') + '.json');
+            return require(src.json + path.basename(file.path, '.html') + '.json');
         }))
-        .pipe(jade())
+        .pipe(swig())
         .pipe(gulp.dest('build'))
         .on("end", browserSync.reload);
 });
