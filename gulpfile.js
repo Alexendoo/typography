@@ -25,9 +25,13 @@ gulp.task('templates', function() {
         .pipe(data(function(file) {
             return require(src.json + path.basename(file.path, '.html') + '.json');
         }))
-        .pipe(swig())
+        .pipe(swig({
+            defaults: {
+                cache: false
+            }
+        }))
         .pipe(gulp.dest('build'))
-        .on("end", browserSync.reload);
+        .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('sass', function() {
@@ -37,4 +41,4 @@ gulp.task('sass', function() {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['templates', 'sass', 'serve']);
