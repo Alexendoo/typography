@@ -1,44 +1,12 @@
-var gulp        = require('gulp');
-var sass        = require('gulp-sass');
-var data        = require('gulp-data');
-var swig        = require('gulp-swig');
-var path        = require('path');
-var browserSync = require('browser-sync');
+const gulp        = require('gulp');
+const runSequence = require('run-sequence');
 
-var src = {
-    scss: './app/scss/*.scss',
-    html: './app/html/',
-    json: './app/json/'
-};
+//handlebars?
 
-gulp.task('serve', function() {
-    browserSync({
-        server: "./build"
-    });
+require('require-dir')('gulp.d');
 
-    gulp.watch(src.scss, ['sass']);
-    gulp.watch([src.html + '**/*.html', src.json + '*.json'], ['templates']);
+gulp.task('default', (cb) => {
+  runSequence(
+    cb
+  );
 });
-
-gulp.task('templates', function() {
-    return gulp.src(src.html + '*.html')
-        .pipe(data(function(file) {
-            return require(src.json + path.basename(file.path, '.html') + '.json');
-        }))
-        .pipe(swig({
-            defaults: {
-                cache: false
-            }
-        }))
-        .pipe(gulp.dest('build'))
-        .pipe(browserSync.reload({stream: true}));
-});
-
-gulp.task('sass', function() {
-    return gulp.src(src.scss)
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('build/css'))
-        .pipe(browserSync.reload({stream: true}));
-});
-
-gulp.task('default', ['templates', 'sass', 'serve']);

@@ -10,11 +10,9 @@
     "url": "https://github.com/alexendoo/typography/issues"
   },
   "devDependencies": {
-    "browser-sync": "^2.9.8",
+    "babel": "^6.1.18",
     "gulp": "^3.9.0",
-    "gulp-data": "^1.2.0",
-    "gulp-sass": "^2.0.4",
-    "gulp-swig": "^0.7.4",
-    "path": "^0.12.7"
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5"
   }
 }
