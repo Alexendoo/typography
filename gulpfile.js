@@ -9,10 +9,10 @@ global.config = {
   dest: 'build'
 };
 
-gulp.task('default', (cb) => {
+gulp.task('default', cb => {
   runSequence(
     'clean',
-    ['sass', 'mustache'],
+    ['sass', 'handlebars'],
     cb
   );
 });
@@ -20,7 +20,7 @@ gulp.task('default', (cb) => {
 gulp.task('dev', () => {
   runSequence(
     'clean',
-    ['sass', 'mustache'],
+    ['sass', 'handlebars'],
     ['watch', 'live']
   );
 });
