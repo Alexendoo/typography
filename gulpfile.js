@@ -1,8 +1,6 @@
 const gulp        = require('gulp');
 const runSequence = require('run-sequence');
 
-//handlebars?
-
 require('require-dir')('gulp.d');
 
 global.config = {
@@ -13,6 +11,16 @@ global.config = {
 
 gulp.task('default', (cb) => {
   runSequence(
+    'clean',
+    ['sass', 'mustache'],
     cb
+  );
+});
+
+gulp.task('dev', () => {
+  runSequence(
+    'clean',
+    ['sass', 'mustache'],
+    ['watch', 'live']
   );
 });
